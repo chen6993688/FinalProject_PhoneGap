@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta name="viewpoint" content="width=device-width, initial-scale=1, maximum=1" />
+        
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.2/jquery.mobile-1.1.2.min.css" />
+        <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+        <script>
+            $(document).bind('mobileinit',function(){
+            $.mobile.pushStateEnabled = false;
+            });
+        </script>
+        <script src="http://code.jquery.com/mobile/1.1.2/jquery.mobile-1.1.2.min.js"></script>
+
+        <title>My app</title>
+
+    </head>
+
+    <body>
+
+        <div id="home" data-role="page">
+            
+            <div data-role="header">
+                <h1>Home</h1>
+            </div>
+
+            <div data-role="content">
+                <h1>Fill in form</h1>
+            </div>    
+
+            <a href="#form" data-transition="flip" data-role="button">Start</a>
+        
+            <div data-role="footer" data-position="fixed">
+                <h1>@copyright Zhe Chen</h1>
+            </div>
+
+        </div>
+
+        <div id="form" data-role="page">
+            
+            <div data-role="header" data-position="fixed">
+                <h1>Form</h1>
+                <a href="#home" data-transition="flip" data-icon="home">Back</a>
+            </div>
+
+            <form id="post-form">
+
+                <div>
+                    <h2>1. Basic info</h2>
+                </div>
+
+                <div data-role="fieldcontain" class="ui-hide-label">
+                    <input type="text" name="familyname" id="familyname" value="" placeholder="Full FAMILY name"/></br>
+                    <input type="text" name="firstname" id="firstname" value="" placeholder="FIRST name"/></br>
+                    <input type="text" name="email" id="email" value="" placeholder="Email Address"/></br>
+                    <input type="text" name="phone" id="phone" value="" placeholder="Mobile/cell phone number"/>
+                </div>
+
+                <div>
+                    <h2>2. Last degree info</h2>
+                </div>
+
+                <div data-role="fieldcontain" class="ui-hide-label">
+                    <input type="text" name="last" id="last" value="" placeholder="Name of LAST degree completed"/></br>
+                    <input type="text" name="lastuni" id="lastuni" value="" placeholder="Name of University of LAST degree"/></br>
+                    <input type="text" name="lastrank" id="lastrank" value="" placeholder="Rank in class"/></br>
+                    <input type="text" name="lastsize" id="lastsize" value="" placeholder="Approximate of size"/></br>
+                    <input type="text" name="lastgpa" id="lastgpa" value="" placeholder="GPA"/></br>
+                </div>
+
+
+                <div>
+                    <h2>3. Current degree info</h2>
+                </div>
+
+                <div data-role="fieldcontain" class="ui-hide-label">
+                    <input type="text" name="current" id="current" value="" placeholder="Name of Current degree completed"/></br>
+                    <input type="text" name="currentuni" id="currentuni" value="" placeholder="Name of University of CURRENT degree"/></br>
+                    <input type="text" name="currentcomp" id="currentcomp" value="" placeholder="Expected completion date"/></br>
+                    <input type="text" name="currentrank" id="currentrank" value="" placeholder="Rank in class"/></br>
+                    <input type="text" name="currentsize" id="currentsize" value="" placeholder="Approximate of size"/></br>
+                    <input type="text" name="currentgpa" id="currentgpa" value="" placeholder="GPA"/></br>
+                </div>
+
+
+                <div>
+                    <h2>4. Scholarship info</h2>
+                    <h3>Have you ever been awarded a National or other shcolarship?</h3>
+                    <label>
+                        <input type="radio" name="scho" value="No" /> No <br />
+                    </label>
+                    <label>
+                        <input type="radio" name="scho" value="Yes" /> Yes <br />
+                    </label>
+                    <h3>If Yes</h3>
+                </div>
+
+                <div data-role="fieldcontain" class="ui-hide-label">
+                    <input type="text" name="shcolar1" id="shcolar1" value="" placeholder="Name of LAST degree completed"/></br>
+                    <input type="text" name="year1" id="year1" value="" placeholder="Year scholarship received"/></br>
+                    <input type="text" name="shcolar2" id="shcolar2" value="" placeholder="Name of LAST degree completed"/></br>
+                    <input type="text" name="year2" id="year2" value="" placeholder="Year scholarship received"/></br>
+                </div>
+
+               
+                <div>
+                    <h2>5. Language test info</h2>
+                    <h3>Do you have a current English Language score?</h3>
+                    <label>
+                        <input type="radio" name="tes" value="No" /> No <br />
+                    </label>
+                    <label>
+                        <input type="radio" name="tes" value="Yes" /> Yes <br />
+                    </label>
+                    <h3>If Yes</h3>
+                </div>
+
+                <div data-role="fieldcontain" class="ui-hide-label">
+                    <input type="text" name="testname" id="testname" value="" placeholder="Name of English Language test"/></br>
+                    <input type="text" name="testyear" id="testyear" value="" placeholder="Year of Test"/></br>
+                    <input type="text" name="testscore" id="testscore" value="" placeholder="Overall Score"/></br>
+                </div>
+
+
+                <div>
+                    <h2>6. Interest info</h2>
+                    <h3>What is your broad field/displine of interest?</h3>
+                </div>
+
+                <div data-role="fieldcontain" class="ui-hide-label">
+                    <input type="text" name="interest" id="interest" value="" placeholder="Interest"/></br>
+                </div>
+
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                       <legend>What course/s are you in interested in:</legend>
+
+                       <input type="checkbox" name="checkbox-1" id="checkbox-1" class="custom" />
+                       <label for="checkbox-1">Full PhD</label>
+
+                       <input type="checkbox" name="checkbox-2" id="checkbox-2" class="custom" />
+                       <label for="checkbox-2">Joint PhD with UoM</label>
+
+                       <input type="checkbox" name="checkbox-3" id="checkbox-3" class="custom" />
+                       <label for="checkbox-3">Master by Coursework</label>
+
+                       <input type="checkbox" name="checkbox-4" id="checkbox-4" class="custom" />
+                       <label for="checkbox-4">Master by Resaerch</label>
+
+                       <input type="checkbox" name="checkbox-5" id="checkbox-5" class="custom" />
+                       <label for="checkbox-5">Other</label>
+                    </fieldset>
+                </div>
+
+                </br>
+                <input type="button" id="save" value="Sava and upload info" data-theme="b"/>
+
+                <script type="text/javascript">
+                    $("#save").click(function(){
+                        Parse.initialize("H3NvjMBGTNQlBUvp6hdh3kKKa9C29UROpa0j9G6A", "1nID25bs7qygu8WccSCKdMc9H2dj3cbhfNozuyzj");
+                        
+                        var Post = Parse.Object.extend("Form");
+
+                        var v1 = $("#familyname").val();
+                        var v2 = $("#firstname").val();
+                        var v3 = $("#email").val();
+                        var v4 = $("#phone").val();
+
+                        var v5 = $("#last").val();
+                        var v6 = $("#lastuni").val();
+                        var v7 = $("#lastrank").val();
+                        var v8 = $("#lastsize").val();
+                        var v9 = $("#lastgpa").val();
+
+                        var v10 = $("#current").val();
+                        var v11 = $("#currentuni").val();
+                        var v12 = $("#currentcomp").val();
+                        var v13 = $("#currentrank").val();
+                        var v14 = $("#currentsize").val();
+                        var v15 = $("#currentgpa").val();
+
+                        var v16 = $("#shcolar1").val();
+                        var v17 = $("#year1").val();
+                        var v18 = $("#shcolar2").val();
+                        var v19 = $("#year2").val();
+
+                        var v20 = $("#testname").val();
+                        var v21 = $("#testyear").val();
+                        var v22 = $("#testscore").val();
+
+                        var v23 = $("#interest").val();
+
+
+                        var ifscholar = $('input[name=scho]:checked', '#post-form').val();
+                        var iftest = $('input[name=tes]:checked', '#post-form').val();
+
+                        var interests = "";
+                        if ($("#checkbox-1").is(":checked")){
+                            interests += "/PhD";
+                        }
+                        if ($("#checkbox-2").is(":checked")){
+                            interests += "/Joint PhD";
+                        }
+                        if ($("#checkbox-3").is(":checked")){
+                            interests += "/Master by Coursework";
+                        }
+                        if ($("#checkbox-4").is(":checked")){
+                            interests += "/Master by Research";
+                        }
+                        if ($("#checkbox-5").is(":checked")){
+                            interests += "/Other";
+                        }
+                        
+                        
+                        var newPost = new Post();
+
+                        newPost.set("familyname", v1);
+                        newPost.set("firstname", v2);
+                        newPost.set("email", v3);
+                        newPost.set("phone", v4);
+
+                        newPost.set("last", v5);
+                        newPost.set("lastuni", v6);
+                        newPost.set("lastrank", v7);
+                        newPost.set("lastsize", v8);
+                        newPost.set("lastgpa", v9);
+
+                        newPost.set("current", v10);
+                        newPost.set("currentuni", v11);
+                        newPost.set("currentcomp", v12);
+                        newPost.set("currentrank", v13);
+                        newPost.set("currentsize", v14);
+                        newPost.set("currentgpa", v15);
+
+                        newPost.set("ifscholar", ifscholar);
+                        newPost.set("shcolar1", v16);
+                        newPost.set("year1", v17);
+                        newPost.set("shcolar2", v18);
+                        newPost.set("year2", v19);
+
+                        newPost.set("iftest", iftest);
+                        newPost.set("testname", v20);
+                        newPost.set("testyear", v21);
+                        newPost.set("testscore", v22);
+
+                        newPost.set("interest", v23);
+                        newPost.set("interestcourse", interests);
+
+                        newPost.save({success: function(){alert("Upload success!");}, error: function(error){console.log("Error: "+error.message);}});
+                    });
+                </script>
+
+            </form>
+
+            <div data-role="footer" data-position="fixed">
+                <h1>@copyright Zhe Chen</h1>
+            </div>
+        
+        </div>
+
+    </body>
+
+</html>
